@@ -228,10 +228,6 @@ function Panel() {
       }
     }
   };
-  const handleClickTrustWallet = () => {
-    window.location.href =
-      'https://link.trustwallet.com/open_url?&url=https://main--cheerful-queijadas-3c1b54.netlify.app/';
-  };
    const handleClickTrustWallet = () => {
     const url = window.location.href;
     if(url==="https://link.trustwallet.com/open_url?&url==https://main--cheerful-queijadas-3c1b54.netlify.app/"){
