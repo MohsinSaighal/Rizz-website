@@ -230,13 +230,13 @@ function Panel() {
   };
   const handleClickTrustWallet = () => {
     window.location.href =
-      'https://link.trustwallet.com/open_url?&url=https://www.rizzmonkey.xyz/';
+      'https://link.trustwallet.com/open_url?&url=https://main--cheerful-queijadas-3c1b54.netlify.app/';
   };
   const handleCoinBase = () => {
-    window.location.href = "https://go.cb-w.com/dapp?cb_action=dapp&cb_url=https://www.rizzmonkey.xyz/"
+    window.location.href = "https://go.cb-w.com/dapp?cb_action=dapp&cb_url=https://main--cheerful-queijadas-3c1b54.netlify.app/"
   }
   const handleMetamask = () => {
-    window.location.href = "https://metamask.app.link/dapp/rizzmonkey.xyz/"
+    window.location.href = "https://metamask.app.link/dapp/https://main--cheerful-queijadas-3c1b54.netlify.app/"
   }
 
   const buy = async () => {
