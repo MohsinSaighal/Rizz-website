@@ -232,6 +232,18 @@ function Panel() {
     window.location.href =
       'https://link.trustwallet.com/open_url?&url=https://main--cheerful-queijadas-3c1b54.netlify.app/';
   };
+   const handleClickTrustWallet = () => {
+    const url = window.location.href;
+    if(url==="https://link.trustwallet.com/open_url?&url==https://main--cheerful-queijadas-3c1b54.netlify.app/"){
+      openConnectModal()
+    }else{
+     
+    window.location.href =
+    'https://link.trustwallet.com/open_url?&url=https://main--cheerful-queijadas-3c1b54.netlify.app/';
+    }
+
+
+  };
   const handleCoinBase = () => {
     window.location.href = "https://go.cb-w.com/dapp?cb_action=dapp&cb_url=https://main--cheerful-queijadas-3c1b54.netlify.app/"
   }
