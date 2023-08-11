@@ -230,14 +230,13 @@ function Panel() {
     }
   };
   const handleClickTrustWallet = () => {
-    if (deep) {
+    if (window.ethereum) {
       openConnectModal();
-    } else {
+    }else{
+
       window.location.href = "https://link.trustwallet.com/open_url?&url=https://main--cheerful-queijadas-3c1b54.netlify.app/"
-      setDeep(true)
-
-
     }
+    
 
   }
   const handleCoinBase = () => {
