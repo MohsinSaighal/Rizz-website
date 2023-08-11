@@ -228,7 +228,7 @@ function Panel() {
       }
     }
   };
-     const handleClickTrustWallet = () => {
+  const handleClickTrustWallet = () => {
     // Detect if the user is using the Trust Wallet in-app browser
     const isTrustWalletBrowser = /Trust/.test(navigator.userAgent);
   
@@ -240,14 +240,16 @@ function Panel() {
       window.location.href = 'https://link.trustwallet.com/open_url?&url=http://192.168.1.193:3000/';
     }
   };
-
-
-  };
   const handleCoinBase = () => {
-    window.location.href = "https://go.cb-w.com/dapp?cb_action=dapp&cb_url=https://main--cheerful-queijadas-3c1b54.netlify.app/"
+    const url = window.location.href;
+
+    if(url==="https://go.cb-w.com/dapp?cb_action=dapp&cb_url=https://www.rizzmonkey.xyz/"){
+      openConnectModal()
+    }
+    window.location.href = "https://go.cb-w.com/dapp?cb_action=dapp&cb_url=https://www.rizzmonkey.xyz/"
   }
   const handleMetamask = () => {
-    window.location.href = "https://metamask.app.link/dapp/https://main--cheerful-queijadas-3c1b54.netlify.app/"
+    window.location.href = "https://metamask.app.link/dapp/rizzmonkey.xyz/"
   }
 
   const buy = async () => {
