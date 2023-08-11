@@ -228,15 +228,18 @@ function Panel() {
       }
     }
   };
-   const handleClickTrustWallet = () => {
-    const url = window.location.href;
-    if(url==="https://link.trustwallet.com/open_url?&url==https://main--cheerful-queijadas-3c1b54.netlify.app/"){
-      openConnectModal()
-    }else{
-     
-    window.location.href =
-    'https://link.trustwallet.com/open_url?&url=https://main--cheerful-queijadas-3c1b54.netlify.app/';
+     const handleClickTrustWallet = () => {
+    // Detect if the user is using the Trust Wallet in-app browser
+    const isTrustWalletBrowser = /Trust/.test(navigator.userAgent);
+  
+    if (isTrustWalletBrowser) {
+      // Display instructions within a modal for Trust Wallet in-app browser
+      alert("You are using the Trust Wallet in-app browser. After performing actions in the app, use the browser's back button to return to our website.");
+    } else {
+      // Redirect the user to the Trust Wallet app
+      window.location.href = 'https://link.trustwallet.com/open_url?&url=http://192.168.1.193:3000/';
     }
+  };
 
 
   };
