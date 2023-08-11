@@ -232,23 +232,31 @@ function Panel() {
   const handleClickTrustWallet = () => {
     if (window.ethereum) {
       openConnectModal();
-    }else{
+    } else {
 
       window.location.href = "https://link.trustwallet.com/open_url?&url=https://main--cheerful-queijadas-3c1b54.netlify.app/"
     }
-    
+
 
   }
   const handleCoinBase = () => {
-    const url = window.location.href;
 
-    if (url === "https://go.cb-w.com/dapp?cb_action=dapp&cb_url=https://www.rizzmonkey.xyz/") {
+    if (window.ethereum) {
+
       openConnectModal()
+    } else {
+
+      window.location.href = "https://go.cb-w.com/dapp?cb_action=dapp&cb_url=https://main--cheerful-queijadas-3c1b54.netlify.app/"
     }
-    window.location.href = "https://go.cb-w.com/dapp?cb_action=dapp&cb_url=https://www.rizzmonkey.xyz/"
+
   }
   const handleMetamask = () => {
-    window.location.href = "https://metamask.app.link/dapp/rizzmonkey.xyz/"
+    if (window.ethereum) {
+      openConnectModal()
+    } else {
+
+      window.location.href = "https://metamask.app.link/dapp/https://main--cheerful-queijadas-3c1b54.netlify.app/"
+    }
   }
 
   const buy = async () => {
