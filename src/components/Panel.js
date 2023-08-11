@@ -438,7 +438,7 @@ function Panel() {
               {isConnected ? (
                 <button onClick={buy}>Buy</button>
               ) : (
-                <button onClick={() => isMobile ? handleOpen() : openConnectModal()}>CONNECT WALLET</button>
+                <button onClick={() => isMobile && !window.ethereum ? handleOpen() : openConnectModal()}>CONNECT WALLET</button>
               )}
             </div>
             <div>
