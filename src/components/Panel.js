@@ -36,6 +36,7 @@ const style = {
 function Panel() {
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [deep, setDeep] = useState(false)
   const handleOpen = () => setMobileOpen(true);
   const handleClose = () => setMobileOpen(false);
   const presaleAddress = '0x17b7b615167559d5Ff86E1Acc6Eb3B4C6e8116cB';
@@ -229,21 +230,20 @@ function Panel() {
     }
   };
   const handleClickTrustWallet = () => {
-    // Detect if the user is using the Trust Wallet in-app browser
-    const isTrustWalletBrowser = /Trust/.test(navigator.userAgent);
-  
-    if (isTrustWalletBrowser) {
-      // Display instructions within a modal for Trust Wallet in-app browser
-      alert("You are using the Trust Wallet in-app browser. After performing actions in the app, use the browser's back button to return to our website.");
+    if (deep) {
+      openConnectModal();
     } else {
-      // Redirect the user to the Trust Wallet app
-      window.location.href = 'https://link.trustwallet.com/open_url?&url=http://192.168.1.193:3000/';
+      window.location.href = "https://link.trustwallet.com/open_url?&url=https://main--cheerful-queijadas-3c1b54.netlify.app/"
+      setDeep(true)
+
+
     }
-  };
+
+  }
   const handleCoinBase = () => {
     const url = window.location.href;
 
-    if(url==="https://go.cb-w.com/dapp?cb_action=dapp&cb_url=https://www.rizzmonkey.xyz/"){
+    if (url === "https://go.cb-w.com/dapp?cb_action=dapp&cb_url=https://www.rizzmonkey.xyz/") {
       openConnectModal()
     }
     window.location.href = "https://go.cb-w.com/dapp?cb_action=dapp&cb_url=https://www.rizzmonkey.xyz/"
@@ -273,8 +273,8 @@ function Panel() {
         const supply = await contract.totalSupply();
         const presaleContract = new ethers.Contract(presaleAddress, abi, signer);
         if (currency != 'bnb') {
-           const approvalTx = await contract.approve(presaleAddress, supply);
-            await approvalTx.wait();
+          const approvalTx = await contract.approve(presaleAddress, supply);
+          await approvalTx.wait();
           await presaleContract.buy(
             ethers.utils.parseEther(expected.toString()),
             ethers.utils.parseEther(inputValue),
